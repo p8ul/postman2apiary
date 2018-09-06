@@ -1,6 +1,8 @@
 # Postman2Apiary
 
- Tool for generating Blueprint API markup or the Apiary API from a Postman collection. Edit your postman collection requests with relevant names and description. Import postman-collection.json from postman2apiary/app/ for a quick demo on how to name and describe your requests.
+ Tool for generating Blueprint API markup or the Apiary API from a Postman collection. 
+
+Edit your postman collection requests with relevant names and description. Import postman-collection.json from postman2apiary/app/ for a quick demo on how to name and describe your requests.
 Expected output should be something like [Polls api documentation](https://apiblueprint.org/documentation/examples/polls-api.html)
 
 ## Prerequisites
