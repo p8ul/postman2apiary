@@ -23,3 +23,6 @@ Expected output should be something like [Polls api documentation](https://apibl
 ## Contribution
 Contributions are greatly appreciated. What is most lacking is indentation on request & response expected json.
 Tests and would be super-greatly appreciated too.
+
+### License
+Postman2apiary is [MIT Licensed](https://github.com/p8ul/postman2apiary/blob/master/LICENSE)
