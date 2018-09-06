@@ -21,6 +21,5 @@ Expected output should be something like [Polls api documentation](https://apibl
     output-file.apid: Name of your api markup file to be generated.
 
 ## Contribution
-    Contributions are greatly appreciated.
-    What is most lacking is indentation on request & response expected json.
-    Tests and would be super-greatly appreciated too.
+Contributions are greatly appreciated. What is most lacking is indentation on request & response expected json.
+Tests and would be super-greatly appreciated too.
