@@ -1,0 +1,533 @@
+{
+	"id": "9cd5484b-e08f-4557-91fa-7ff411ae36e2",
+	"name": "Stackoverflow-lite",
+	"description": "Stackoverflow lite is a simple API allowing users to view post questions, answers and vote for them. You can view this documentation over at [Apiary](https://stackoverflowlite2.docs.apiary.io).\n",
+	"auth": null,
+	"events": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a554faac-89b2-483f-b23c-16cc5c167c79",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "548e64cb-efe2-4b7e-b4f3-24ca85b36ef0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variables": [],
+	"order": [
+		"fa832817-1e72-4223-aa82-36e86f6aae26",
+		"7ac20723-0dec-4e53-95c2-684a46f3949f",
+		"95dd9436-d931-4354-88d4-9acaa1cf92bd",
+		"e467aa8b-fe4e-43e1-80a2-7f24869c5b1a",
+		"f3ad5fd7-8547-4fac-9cb8-a0d24cfd019a",
+		"ca7e1089-a3aa-4d45-8002-19716360e6ea",
+		"0ba72fb5-b871-43d7-8eb7-61fd3a308663",
+		"1fa44e91-88e2-4a9d-adf1-91bbf374af86",
+		"b00ff201-e343-4043-998d-6d8b07bd71e3",
+		"342fcab2-a59d-4520-9886-1cc9b4c943d2",
+		"3316e33a-5e63-4324-ba6b-995352f6d264",
+		"f64dac2d-4f51-40e6-8a16-7d68c2148d4b",
+		"8f07e507-e677-4a7a-a248-c1e0a3525d3b",
+		"ba53fc34-5eb8-4e9e-9145-613997e0dfd5",
+		"bd6b79b8-27f3-43b9-88b7-79a565de388f",
+		"5d6fd9cf-e46d-44e9-ade2-61d2fd1ec7f9",
+		"7c5cc7ad-920b-45ce-a4cf-c6c4124731b1",
+		"1acb2a78-dd14-499e-bf66-be8e61e7aa4c"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "0ba72fb5-b871-43d7-8eb7-61fd3a308663",
+			"name": "Users: List users",
+			"url": "http://127.0.0.1:5000/api/v1/auth/users",
+			"description": "This resource will list all users.",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU5LCJpYXQiOjE1MzQ2NjI0MDIsImV4cCI6MTUzNzM0MDgzMn0.5Ir5av92wC2mFptnj8V1KVRxOkjWweHI47twx9EAAts"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "1acb2a78-dd14-499e-bf66-be8e61e7aa4c",
+			"name": "Comments:  Create a comment",
+			"url": "http://127.0.0.1:5000/api/v1/questions/answers/comment/3",
+			"description": "A Comment object has the following attributes:\n\n+ user_id: - Commenting user id\n+ created_at - An ISO8601 date when the question was published.\n+ comment_body - String: Comment description\n+ Parameters\n    + answer_id: 1 (required, number) - ID of the answer in form of an integer\n",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ3MzcxMzgsImlhdCI6MTUzNDY1MDcwOCwic3ViIjoyfQ.OWBsauF3hT1arjcR2QnWBr_X3w90Qjfku1Gf2XlOH5Q"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "1fa44e91-88e2-4a9d-adf1-91bbf374af86",
+			"name": "User: Login",
+			"url": "http://127.0.0.1:5000/api/v1/auth/login",
+			"description": "This action allows you to login and and get a JWT authorization token.\n+ Parameters\n    + email: 1 (required, string) - User email\n    + password: 1 (required, string) - User password\n",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\"username\": \"sky\",\n\"email\": \"sky@Jhames.com\",\n\"password\": \"sdsdfsdf9s0d9fs09sf\" }",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "3316e33a-5e63-4324-ba6b-995352f6d264",
+			"name": "Users: Update user information",
+			"url": "http://127.0.0.1:5000/api/v1/auth/users/1",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\"username\": \"Users\",\n\"email\": \"sdfs@sdfs.com\",\n\"password\": \"sdsdfsdf9s0d9fs09sf\" }",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "342fcab2-a59d-4520-9886-1cc9b4c943d2",
+			"name": "Users: Retrieve single user",
+			"url": "http://127.0.0.1:5000/api/v1/auth/users/12",
+			"description": "This action allows you to retreive user details.\n+ Parameters\n    + user_id: 1 (required, number) - ID of user you want details displayed\n    ",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU5LCJpYXQiOjE1MzQ2NjI0MDIsImV4cCI6MTUzNzM0MDgzMn0.5Ir5av92wC2mFptnj8V1KVRxOkjWweHI47twx9EAAts"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "5d6fd9cf-e46d-44e9-ade2-61d2fd1ec7f9",
+			"name": "Answers: Retrieve an answer",
+			"url": "http://127.0.0.1:5000/api/v1/questions/answers/6",
+			"description": "This action allows you to retreive a single answer details.\n+ Parameters\n    + answer_id: 1 (required, number) - ID of answer you to display",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ3MzcxMzgsImlhdCI6MTUzNDY1MDcwOCwic3ViIjoyfQ.OWBsauF3hT1arjcR2QnWBr_X3w90Qjfku1Gf2XlOH5Q"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "7ac20723-0dec-4e53-95c2-684a46f3949f",
+			"name": "Question: Create Question",
+			"url": "http://127.0.0.1:5000/api/v1/questions/",
+			"description": "You may create your own question using this action. It takes a JSON object containing a question title and body.\n\n+ title (string) - The question title\n+ body (string) - Question description body",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU5LCJpYXQiOjE1MzQ2NjI0MDIsImV4cCI6MTUzNzM0MDgzMn0.5Ir5av92wC2mFptnj8V1KVRxOkjWweHI47twx9EAAts"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "7c5cc7ad-920b-45ce-a4cf-c6c4124731b1",
+			"name": "Votes: Upvote/Downvote",
+			"url": "http://127.0.0.1:5000/api/v1/questions/answers/vote/1",
+			"description": "A Vote object has the following attributes:\n\n+ user_id: - Voters user id\n+ created_at - An ISO8601 date when the question was published.\n+ vote - Boolean: True to upvote / False to down vote\n\n+ Parameters\n    + answer_id: 1 (required, number) - ID of the answer in form of an integer\n",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ3MzcxMzgsImlhdCI6MTUzNDY1MDcwOCwic3ViIjoyfQ.OWBsauF3hT1arjcR2QnWBr_X3w90Qjfku1Gf2XlOH5Q"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"vote\": \"true\"}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8f07e507-e677-4a7a-a248-c1e0a3525d3b",
+			"name": "Answers: Post an answer",
+			"url": "http://127.0.0.1:5000/api/v1/questions/2/answers",
+			"description": "This action will allow you to post an answer to the specified question\n\nA Question object has the following attributes:\n\n+ answer_body - Answer descriptive body\n\n+ Parameters\n    + question_id: 1 (required, number) - ID of the Question in form of an integer\n",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ3MzcxMzgsImlhdCI6MTUzNDY1MDcwOCwic3ViIjoyfQ.OWBsauF3hT1arjcR2QnWBr_X3w90Qjfku1Gf2XlOH5Q"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"answer_body\": \"I lovehjhh JKJK\"}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "95dd9436-d931-4354-88d4-9acaa1cf92bd",
+			"name": "Question: Update question",
+			"url": "http://127.0.0.1:5000/api/v1/questions/1",
+			"description": "User can update a question using this action. It takes a JSON object containing a question title and body.\n\n+ title (string) - The question title\n+ body (string) - Question description body",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ3MzcxMzgsImlhdCI6MTUzNDY1MDcwOCwic3ViIjoyfQ.OWBsauF3hT1arjcR2QnWBr_X3w90Qjfku1Gf2XlOH5Q"
+					}
+				]
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"title\": \"New sdfsdftitle\" }",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b00ff201-e343-4043-998d-6d8b07bd71e3",
+			"name": "Users: Create user",
+			"url": "http://127.0.0.1:5000/api/v1/auth/signup",
+			"description": "You may create your own account using this action. \nIt takes a JSON object containing a user email, password and username as profile and authorization details.\n\n+ useraname (string) - User name\n+ email (string) - A valid user email\n+ password (string) - Strong login password",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MzQ2MjE3MjAsInN1YiI6bnVsbCwiZXhwIjoxNTM0NzA4MTUwfQ.OMpZFKQDueMSE7dZhWIyzAxSKmHii6fsB3lD6B_NvS4",
+						"type": "string"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\"username\": \"sky\",\n\"email\": \"sky@Jhames.com\",\n\"password\": \"sdsdfsdf9s0d9fs09sf\" }",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ba53fc34-5eb8-4e9e-9145-613997e0dfd5",
+			"name": "Answer: List all answers",
+			"url": "http://127.0.0.1:5000/api/v1/questions/answers",
+			"description": "You may ist all answers using this action.",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ3MzcxMzgsImlhdCI6MTUzNDY1MDcwOCwic3ViIjoyfQ.OWBsauF3hT1arjcR2QnWBr_X3w90Qjfku1Gf2XlOH5Q"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "bd6b79b8-27f3-43b9-88b7-79a565de388f",
+			"name": "Answer:  Update answer",
+			"url": "http://127.0.0.1:5000/api/v1/questions/3/answers/1",
+			"description": "This action will Update an answer\n+ Parameters\n    + answer_id: 1 (required, number) - ID of the answer in form of an integer\n",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU5LCJpYXQiOjE1MzQ2NjI0MDIsImV4cCI6MTUzNzM0MDgzMn0.5Ir5av92wC2mFptnj8V1KVRxOkjWweHI47twx9EAAts"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"body\": \"i asdasda programming\", \"user_id\": \"1\",\n  \"accepted\": \"true\"\n\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ca7e1089-a3aa-4d45-8002-19716360e6ea",
+			"name": "Questions: User questions",
+			"url": "http://127.0.0.1:5000/api/v1/questions/user/1",
+			"description": "Users can fetch all questions he/she has ever asked on the platform.",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU5LCJpYXQiOjE1MzQ2NjI0MDIsImV4cCI6MTUzNzM0MDgzMn0.5Ir5av92wC2mFptnj8V1KVRxOkjWweHI47twx9EAAts"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "e467aa8b-fe4e-43e1-80a2-7f24869c5b1a",
+			"name": "Question: Delete Question",
+			"url": "http://127.0.0.1:5000/api/v1/questions/3",
+			"description": "You may delete your own question using this action. It takes a JSON object containing a question title and body.\n\n+ question_id: 1 (required, number) - ID of the Question in form of an integer",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ3MzcxMzgsImlhdCI6MTUzNDY1MDcwOCwic3ViIjoyfQ.OWBsauF3hT1arjcR2QnWBr_X3w90Qjfku1Gf2XlOH5Q"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "f3ad5fd7-8547-4fac-9cb8-a0d24cfd019a",
+			"name": "Questions: Retrieve a question",
+			"url": "http://127.0.0.1:5000/api/v1/questions/124",
+			"description": "You may retrieve a question with all its answers using this action. It takes a question id.",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ3MzcxMzgsImlhdCI6MTUzNDY1MDcwOCwic3ViIjoyfQ.OWBsauF3hT1arjcR2QnWBr_X3w90Qjfku1Gf2XlOH5Q"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"user\": \"sfsdfsdf\"}",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "f64dac2d-4f51-40e6-8a16-7d68c2148d4b",
+			"name": "Users: Delete user",
+			"url": "http://127.0.0.1:5000/api/v1/users/1/",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "fa832817-1e72-4223-aa82-36e86f6aae26",
+			"name": "Question: List questions",
+			"url": "http://127.0.0.1:5000/api/v1/questions",
+			"description": "Resources related to questions in the API.\n\nA Question object has the following attributes:\n\n+ question_id\n+ created_at - An ISO8601 date when the question was published.\n+ title - Question brief title\n+ body - Body description\n+ user_id - Author of the question.\n\n+ Parameters\n    + question_id: 1 (required, number) - ID of the Question in form of an integer\n\n\n\nList all questions",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"bearer": [
+					{
+						"key": "token",
+						"value": "JWT  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ3MzcxMzgsImlhdCI6MTUzNDY1MDcwOCwic3ViIjoyfQ.OWBsauF3hT1arjcR2QnWBr_X3w90Qjfku1Gf2XlOH5Q"
+					}
+				],
+				"type": "bearer"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}

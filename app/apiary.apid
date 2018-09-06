@@ -1,0 +1,267 @@
+FORMAT: 1A
+HOST: http://127.0.0.1:5000/api/v1
+
+# Stackoverflow-lite
+
+Stackoverflow lite is a simple API allowing users to view post questions, answers and vote for them. You can view this documentation over at [Apiary](https://stackoverflowlite2.docs.apiary.io).
+## Users: List users [/auth/users]
+
+
+### Users: List users [GET]
+This resource will list all users.
+
++ Response 201 (application/json)
+
+
+## Comments:  Create a comment [/questions/answers/comment/3]
+
+
+### Comments:  Create a comment [POST]
+A Comment object has the following attributes:
+
++ user_id: - Commenting user id
++ created_at - An ISO8601 date when the question was published.
++ comment_body - String: Comment description
++ Parameters
+    + answer_id: 1 (required, number) - ID of the answer in form of an integer
+
+
++ Request (application/json)
+
++ Response 201 (application/json)
+
+
+## User: Login [/auth/login]
+
+
+### User: Login [POST]
+This action allows you to login and and get a JWT authorization token.
++ Parameters
+    + email: 1 (required, string) - User email
+    + password: 1 (required, string) - User password
+
+
++ Request (application/json)
+
+{
+        "email": "sky@Jhames.com",
+        "password": "sdsdfsdf9s0d9fs09sf",
+        "username": "sky"
+}
+
+
++ Response 201 (application/json)
+
+
+## Users: Update user information [/auth/users/1]
+
+
+### Users: Update user information [PUT]
+
+
++ Response 201 (application/json)
+
+
+## Users: Retrieve single user [/auth/users/12]
+
+
+### Users: Retrieve single user [GET]
+This action allows you to retreive user details.
++ Parameters
+    + user_id: 1 (required, number) - ID of user you want details displayed
+    
+
++ Response 201 (application/json)
+
+
+## Answers: Retrieve an answer [/questions/answers/6]
+
+
+### Answers: Retrieve an answer [GET]
+This action allows you to retreive a single answer details.
++ Parameters
+    + answer_id: 1 (required, number) - ID of answer you to display
+
++ Response 201 (application/json)
+
+
+## Question: Create Question [/questions/]
+
+
+### Question: Create Question [POST]
+You may create your own question using this action. It takes a JSON object containing a question title and body.
+
++ title (string) - The question title
++ body (string) - Question description body
+
++ Request (application/json)
+
++ Response 201 (application/json)
+
+
+## Votes: Upvote/Downvote [/questions/answers/vote/1]
+
+
+### Votes: Upvote/Downvote [POST]
+A Vote object has the following attributes:
+
++ user_id: - Voters user id
++ created_at - An ISO8601 date when the question was published.
++ vote - Boolean: True to upvote / False to down vote
+
++ Parameters
+    + answer_id: 1 (required, number) - ID of the answer in form of an integer
+
+
++ Request (application/json)
+
+{
+        "vote": "true"
+}
+
+
++ Response 201 (application/json)
+
+
+## Answers: Post an answer [/questions/2/answers]
+
+
+### Answers: Post an answer [POST]
+This action will allow you to post an answer to the specified question
+
+A Question object has the following attributes:
+
++ answer_body - Answer descriptive body
+
++ Parameters
+    + question_id: 1 (required, number) - ID of the Question in form of an integer
+
+
++ Request (application/json)
+
+{
+        "answer_body": "I lovehjhh JKJK"
+}
+
+
++ Response 201 (application/json)
+
+
+## Question: Update question [/questions/1]
+
+
+### Question: Update question [PUT]
+User can update a question using this action. It takes a JSON object containing a question title and body.
+
++ title (string) - The question title
++ body (string) - Question description body
+
++ Response 201 (application/json)
+
+
+## Users: Create user [/auth/signup]
+
+
+### Users: Create user [POST]
+You may create your own account using this action. 
+It takes a JSON object containing a user email, password and username as profile and authorization details.
+
++ useraname (string) - User name
++ email (string) - A valid user email
++ password (string) - Strong login password
+
++ Request (application/json)
+
+{
+        "email": "sky@Jhames.com",
+        "password": "sdsdfsdf9s0d9fs09sf",
+        "username": "sky"
+}
+
+
++ Response 201 (application/json)
+
+
+## Answer: List all answers [/questions/answers]
+
+
+### Answer: List all answers [GET]
+You may ist all answers using this action.
+
++ Response 201 (application/json)
+
+
+## Answer:  Update answer [/questions/3/answers/1]
+
+
+### Answer:  Update answer [PUT]
+This action will Update an answer
++ Parameters
+    + answer_id: 1 (required, number) - ID of the answer in form of an integer
+
+
++ Response 201 (application/json)
+
+
+## Questions: User questions [/questions/user/1]
+
+
+### Questions: User questions [GET]
+Users can fetch all questions he/she has ever asked on the platform.
+
++ Response 201 (application/json)
+
+
+## Question: Delete Question [/questions/3]
+
+
+### Question: Delete Question [DELETE]
+You may delete your own question using this action. It takes a JSON object containing a question title and body.
+
++ question_id: 1 (required, number) - ID of the Question in form of an integer
+
++ Response 201 (application/json)
+
+
+## Questions: Retrieve a question [/questions/124]
+
+
+### Questions: Retrieve a question [GET]
+You may retrieve a question with all its answers using this action. It takes a question id.
+
++ Response 201 (application/json)
+
+
+## Users: Delete user [/users/1/]
+
+
+### Users: Delete user [DELETE]
+
+
++ Response 201 (application/json)
+
+
+## Question: List questions [/questions]
+
+
+### Question: List questions [GET]
+Resources related to questions in the API.
+
+A Question object has the following attributes:
+
++ question_id
++ created_at - An ISO8601 date when the question was published.
++ title - Question brief title
++ body - Body description
++ user_id - Author of the question.
+
++ Parameters
+    + question_id: 1 (required, number) - ID of the Question in form of an integer
+
+
+
+List all questions
+
++ Response 201 (application/json)
+
+
