@@ -8,7 +8,7 @@
 
 ## Installation
     ```
-    git clone <repo-url>
+    git clone https://github.com/p8ul/postman2apiary.git
     cd app
     ```
 ## Usage
