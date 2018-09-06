@@ -15,7 +15,7 @@ Expected output should be something like [Polls api documentation](https://apibl
     ```
 ## Usage
     CLI application Application takes three arguments.
-    USAGE: **python run.py [postman.json-file] [output-file.apid]**
+    USAGE: $ python run.py [postman.json-file] [output-file.apid]
 
     postman.json-file: Json file exported from Postman collection
     output-file.apid: Name of your api markup file to be generated.
