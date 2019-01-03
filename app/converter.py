@@ -20,7 +20,6 @@ class PostmanToApiary:
         self.file_format = 'FORMAT: 1A'
         self.requests = []
         self.get_data()
-        # self.write()
 
     def get_data(self):
         try:
@@ -30,8 +29,8 @@ class PostmanToApiary:
             print('[x] :( Some error occurred')
             print(e)
             exit(0)
-        self.name = self.data['name']
-        self.description = self.data['description']
+        self.name = self.data.get('name', '')
+        self.description = self.data.get('description', '')
         self.get_url_info()
 
     def write(self):
@@ -40,7 +39,8 @@ class PostmanToApiary:
         doc.write(self.file_format + '\n')
         doc.write('HOST: ' + self.domain + '\n\n')
         doc.write('# ' + self.name + '\n\n')
-        doc.write(self.description)
+        if self.description:
+            doc.write(self.description)
         doc.close()
 
         for request in self.data.get('requests'):
@@ -50,7 +50,7 @@ class PostmanToApiary:
         url = urlparse(request.get('url'))
         path = url.path.replace(self.api_version, '')
         self.domain, description = url, request.get('description')
-        method, name = request.get('method'), request.get('name')
+        method, name = request.get('method', ''), request.get('name', '')
         content_type = 'application/json'
         collection_name = '## ' + name + ' [' + path + ']\n'
         title = '### ' + name + ' [' + method + ']'
