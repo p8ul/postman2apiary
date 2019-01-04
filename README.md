@@ -9,10 +9,10 @@ Expected output should be something like [Polls api documentation](https://apibl
     python version 3+
 
 ## Installation
-    ```
+    
     git clone https://github.com/p8ul/postman2apiary.git
-    cd app
-    ```
+    cd postman2apiary/app
+    
 ## Usage
     CLI application Application takes three arguments.
     USAGE: $ python run.py [postman.json-file] [output-file.apid]
